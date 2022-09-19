@@ -1,0 +1,57 @@
+{% include 'header1.html' %}
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <div class="col-sm-4">-->
+            <img src="{% static 'image/27.jpg' %}" alt="my image" style="height:600px; width:1050px;margin-top:15px;border-radius:10px;">
+    </div>
+
+<form method="POST" class="post-form"   action="{% url 'addproperty' %}">
+    {% csrf_token %}
+ <hr>
+    <div class="py">
+
+            <div class="col-sm-4" style="background-color:#337AB7; border-radius:30px; float:right; margin-right:100px;height:600px; width:500px;">
+                <div class="formr">
+                    <h2 style="text-align: center;margin-right:60px;color:white;">Add Property</h2></br>
+                     {% if error %}
+	        <div class="alert alert-danger">{{error}}</div>
+	                {% endif %}
+
+                    <label for style="font-size: 20px;color:white; "class="text">State</label><br>
+            <select name="Stater"  style="width:450px; height:25px;">
+    <option value="Select Stater"  >Select State</option>
+        {% for i in fetch %}
+        <option value="{{i.Stater}}">{{i.Stater}}</option>
+        {% endfor %}
+            </select>
+<br>
+                    <label for  style="font-size: 20px; color:white;"class="text">District</label><br>
+                    <input type="text" class="txt"  style="width:450px;" name="District" value="{{values.district}}"><br>
+                    
+                    <label for  style="font-size: 20px;color:white;"class="text">Local Address</label><br>
+                    <input type="text" class="txt"     style="width:450px;" name="Local" value="{{values.local}}"><br>
+                    
+
+                    <label for  style="font-size: 20px;color:white;"class="text">Description</label><br>
+                    <input type="text" class="txt"   style="width:450px;"  name="Description" value="{{values.des}}"><br>
+
+                    <label for  style="font-size: 20px;color:white;"class="text">Rent</label><br>
+                    <input type="text" class="txt"   style="width:450px;"  name="Rent" value="{{values.rent}}"><br>
+
+                    <label for  style="font-size: 20px;color:white;"class="text">Mobile NO. </label><br>
+                    <input type="text" class="txt"    style="width:450px;" name="Mobile" value="{{values.mobile}}" ><br>
+
+
+                    <button type="submit" class="btn" value="Submit" style="background-color:white;color:black;margin-top:30px;">Submit</button>
+
+                </div>
+
+
+            </div>
+</div>-->
+</form>
+<br>
+    <div class col-sm-4></div>

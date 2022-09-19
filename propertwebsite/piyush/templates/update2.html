@@ -1,0 +1,42 @@
+{% include 'header2.html' %}
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<body>
+<div class="col-sm-6"></div>
+<div class="col-sm-6" style="background-color:#337AB7;  width:500px; height:600px; border-radius:10px;">
+<h1  style="color:white; text-align:center;">Update Users</h1>
+{% csrf_token %}
+<form action="upadp/{{ mymember.id }} " method='POST' style="background-color:#337AB7;color:white; "  >
+
+    <label  style="font-size:20px;">Name</label><br>
+<input name="Name" style="color:black; width:450px;" value="{{ mymember.Name }}">
+<br><br>
+    <label  style="font-size:20px;">Email</label><br>
+<input name="Email" style="color:black;   width:450px; "value="{{ mymember.Email }}">
+<br><br>
+    <label  style="font-size:20px;">Password</label><br>
+<input name="Password" style="color:black; width:450px; " value="{{ mymember.Password }}">
+<br><br>
+    <label  style="font-size:20px;">Confirm_Password</label><br>
+<input name="Confirm_Password"  style="color:black; width:450px; " value="{{ mymember.Confirm_Password }}">
+<br><br>
+    <label  style="font-size:20px;">Select_Member</label><br>
+<input name="Select_Member"  style="color:black; width:450px; " value="{{ mymember.Select_Member }}">
+<br><br>
+    <label  style="font-size:20px;">Mobile</label><br>
+<input name="Mobile"  style="color:black; width:450px; " value="{{ mymember.Mobile }}">
+<br><br>
+
+
+<input type="submit" value="Submit" style=" background-color:white;color:black;">
+
+
+</form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+{% include 'header2.html' %}
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<html>
+<style>
+        a{color:white;}
+</style>
+<body>
+<!--<div class="col-sm-3">-->
+<!-- <img src="{% static 'image/37.jpg' %}" alt="my image" style="height:700px; width:1690px;">-->
+
+<!--</div>-->
+<div class="col-sm-6">
+     <img src="{% static 'image/37.jpg' %}" alt="my image" >
+</div>
+    <div class="col-sm-6" style="background-color:#337AB7; float:right;margin-right:30px; width:700px; color:white;border-radius:10px;  ">
+<table border="1px;"   >
+<tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Confirm Password</th>
+        <th>Select Member</th>
+        <th>Mobile</th>
+        <th>Delete</th>
+        <th>Update</th>
+</tr>
+        {% for i in fetch %}
+
+<tr>
+         <td>{{i.id}}</td>
+        <td>{{i.Name}}</td>
+        <td>{{i.Email}}</td>
+        <td>{{i.Password}}</td>
+        <td>{{i.Confirm_Password}}</td>
+        <td>{{i.Select_Member}}</td>
+        <td>{{i.Mobile}}</td>
+
+         <td><a href="delete2/{{ i.id }}" >Delete</a></td>
+         <td><a href="update2/{{ i.id }}" >Update</a></td>
+
+        {% endfor %}
+</tr>
+</table>
+</div>
+<div class="col-sm-4"></div>
+</body>
+</html>

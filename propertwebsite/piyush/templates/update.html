@@ -1,0 +1,29 @@
+{% include 'header1.html' %}
+<body>
+<h1>Update Property</h1>
+
+<form action="upadpr/{{ mymember.id }}" method="post">
+    {% csrf_token %}
+ State:<br>
+<input name="State" value="{{ mymember.Stater }}">
+<br><br>
+District:<br>
+<input name="District" value="{{ mymember.District }}">
+<br><br>
+    Local_Address:<br>
+<input name="Local" value="{{ mymember.Local_Address }}">
+<br><br>
+Description:<br>
+<input name="Description" value="{{ mymember.Description }}">
+<br><br>
+Rent:<br>
+<input name="Rent" value="{{ mymember.Rent }}">
+<br><br>
+Mobile:<br>
+<input name="Mobile" value="{{ mymember.Mobile }}">
+<br><br>
+
+
+<input type="submit" value="Submit">
+</form>
+</body>

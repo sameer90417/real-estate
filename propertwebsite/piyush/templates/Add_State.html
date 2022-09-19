@@ -1,0 +1,28 @@
+{% include 'header2.html' %}
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="col-sm-4">
+    <img src="{% static 'image/43.jpg' %}"  style="height:400px; width:640px;" alt="my image" ></div>
+<form method="POST" class="post-form" action="{% url 'Add_state' %}"  >
+    {% csrf_token %}
+
+<div class="col-sm-4" style="background-color:#337AB7; margin-left:110px; text-align:center; border-radius:10px; height:400px; width:400px;">
+<img src="{% static 'image/41.jpg' %}" style="margin-top:30px;"  alt="my image" ><br>
+    <label style="margin-top:10px; color:white;">State</label>
+<input type="text" class="txt" style="margin-top:10px;"  name="Stater" placeholder="Enter State"><br>
+    <button type="submit" style=" margin-left:0px; margin-top:20px; " class="btn">Submit</button>
+
+</div>
+
+</form>
+<div class="col-sm-4">
+    <img src="{% static 'image/44.jpg' %}"  style="height:400px; width:640px; margin-left:30px;" alt="my image" ></div>
+
+</body>
+</html>

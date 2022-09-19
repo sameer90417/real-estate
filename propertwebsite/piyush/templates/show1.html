@@ -1,0 +1,67 @@
+{% include 'header2.html' %}
+{% load static %}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+.customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.customers td, .customers th {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+
+.customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:#337AB7;
+
+}
+</style></head>
+
+<html>
+<body>
+<div class="col-sm-6">
+         <img src="{% static 'image/40.jpg' %}" alt="my image" style="height:460px; width:840px;">
+
+</div>
+    <div class="col-sm-6" style="background-color:#337AB7; border-radius:10px; width:800px; margin-left:60px;  ">
+<table  class="customers" border="1px" style="color:white;">
+<tr>
+        <th>ID</th>
+        <th>State</th>
+        <th>District</th>
+        <th>Local Address</th>
+        <th>Description</th>
+        <th>Rent</th>
+        <th>Mobile</th>
+        <th>Delete</th>
+        <th>Update</th>
+</tr>
+        {% for i in fetch %}
+
+<tr>
+         <td>{{i.id}}</td>
+        <td>{{i.Stater}}</td>
+        <td>{{i.District}}</td>
+        <td>{{i.Local_Address}}</td>
+        <td>{{i.Description}}</td>
+        <td>{{i.Rent}}</td>
+        <td>{{i.Mobile}}</td>
+         <td><a href="delete1/{{ i.id }}" style="color:white;">Delete</a></td>
+         <td><a href="update1/{{ i.id }}" style="color:white;">Update</a></td>
+
+        {% endfor %}
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% include 'header2.html' %}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+</style>
+<body>
+<div class="col-sm-4"></div>
+
+
+
+<div class="col-sm-4">
+
+<h1>Manage Users</h1>
+
+<form action="upadate_users/{{ mymember.id }}" method='POST'>
+{% csrf_token %}
+ Name:<br>
+<input name="Name" value="{{ mymember.Name }}">
+<br><br>
+Email:<br>
+<input name="Email" value="{{ mymember.Email }}">
+<br><br>
+    Password:<br>
+<input name="Password" value="{{ mymember.Password }}">
+<br><br>
+Confirm_Password:<br>
+<input name="Confirm_Password" value="{{ mymember.Confirm_Password }}">
+<br><br>
+Select_Member:<br>
+<input name="Select_Member" value="{{ mymember.Select_Member }}">
+<br><br>
+Mobile:<br>
+<input name="Mobile" value="{{ mymember.Mobile }}">
+<br><br>
+
+
+<input type="submit" value="Submit">
+</form>
+</div>
+<div class="col-sm-4"></div>
+</body>
+</html>

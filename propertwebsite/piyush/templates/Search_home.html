@@ -1,0 +1,29 @@
+{% include 'header1.html' %}
+{% load static %}
+
+
+
+<div class="col-sm-4" style="background-color:#337AB7; border-radius:10px; height:350px; width:250px;">
+<h4>Search in Your Area</h4>
+    <form action="{% url 'searchr_view' %}" method="post">
+ {% csrf_token %}
+                {% if error %}
+	        <div class="alert alert-danger">{{error}}</div>
+	                {% endif %}
+
+<label for style="margin-top:40px;">State</label>
+ <select name="Stater"  style="width:160px;">
+    <option value="Select State">Select State</option>
+        {% for i in fetch %}
+        <option value="{{i.Stater}}">{{i.Stater}}</option>
+        {% endfor %}
+</select>
+<button type="Submit" name="btn" style="margin-top:30px; margin-left:60px;">Search</button>
+    <img src="{% static 'image/29.png' %}" alt="my image" style="height:300px; margin-top:250px;">
+ </form>
+    </div>
+<div class="col-sm-4">
+                <img src="{% static 'image/28.jpg' %}" alt="my image" style="height:550px; width:1400px;">
+</div>
+</body>
+</html>

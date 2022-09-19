@@ -1,0 +1,11 @@
+{% include 'header2.html' %}
+<body>
+<h1>Update Users</h1>
+<form action="up_st/{{ mymember.id }}" method='POST'>
+{% csrf_token %}
+    Stater:<br>
+<input name="Stater" value="{{ mymember.Stater }}">
+<br><br>
+<input type="submit" value="Submit">
+</form>
+</body>

@@ -1,0 +1,36 @@
+{% include 'header1.html' %}
+{% load static %}
+<html>
+<body>
+<div class="col-sm-4" style="border-radius:10px;">
+    <img src="{% static 'image/36.jpg' %}" alt="my image" style="height:700px; width:1690px;">
+
+
+</div>
+    <div class="col-sm-4" style="background-color:#337AB7; border-radius:10px;width:320px;  ">
+<table border="1px" style="color:white;">
+<tr>
+        <th>District</th>
+        <th>Local Address</th>
+        <th>Description</th>
+        <th>Rent</th>
+        <th>Mobile</th>
+
+</tr>
+        {% for i in fetch %}
+
+<tr>
+        <td>{{i.District}}</td>
+        <td>{{i.Local_Address}}</td>
+        <td>{{i.Description}}</td>
+        <td>{{i.Rent}}</td>
+        <td>{{i.Mobile}}</td>
+
+
+
+        {% endfor %}
+</tr>
+</table>
+</div>
+</body>
+</html>
